@@ -25,26 +25,23 @@
       margin: 0 auto;
       padding: 0 15px;
     }
-/* Стили для ссылок в футере */
-.footer-links a {
-  text-decoration: none;  /* Убираем подчеркивание */
-  color: #fff;  /* Белый цвет текста */
-  font-size: 18px;  /* Устанавливаем размер шрифта */
-  display: block;  /* Каждая ссылка на новой строке */
-  margin-bottom: 10px;  /* Отступ между ссылками */
-}
 
-    /* Верхняя панель навигации */
+    /* Стили для ссылок в футере */
+    .footer-links a {
+      text-decoration: none;  /* Убираем подчеркивание */
+      color: #fff;  /* Белый цвет текста */
+      font-size: 18px;  /* Устанавливаем размер шрифта */
+      display: block;  /* Каждая ссылка на новой строке */
+      margin-bottom: 10px;  /* Отступ между ссылками */
+    }
+
+    /* Header */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      width: 100%;
-      background-color: #fff;
+      padding: 20px 0;
       border-bottom: 2px solid #ccc;
-      max-width: 1200px; /* Ограничиваем ширину */
-      margin: 0 auto; /* Центрируем панель */
     }
 
     .header .logo {
@@ -58,21 +55,9 @@
       font-size: 16px;
     }
 
-    /* Картинки вместо кнопок */
-    .header .icons a {
-      display: inline-block; /* Чтобы изображения располагались по горизонтали */
-    }
-
     .header .icons img {
       width: 24px;
-      height: 24px;
-      cursor: pointer; /* Сделаем курсор указателем, когда наводим на картинку */
-      transition: transform 0.2s; /* Плавное изменение */
-    }
-
-    /* Эффект при наведении на картинку */
-    .header .icons img:hover {
-      transform: scale(1.1); /* Увеличиваем картинку немного при наведении */
+      margin-left: 20px;
     }
 
     /* Search bar */
@@ -178,6 +163,7 @@
     .footer .subscribe button:hover {
       background-color: #45a049;
     }
+
     /* Адаптивность для мобильных устройств */
     @media (max-width: 768px) {
       .header {
@@ -196,7 +182,7 @@
         margin: 5px 0;
       }
 
-      .products {
+      .product-container {
         grid-template-columns: 1fr; /* Один товар в ряду */
         gap: 20px;
       }
@@ -223,7 +209,6 @@
         font-size: 14px;
       }
     }
-    
   </style>
 </head>
 <body>
@@ -233,7 +218,7 @@
       <img src="images/logo.png" alt="logo" class="logo">
       <div class="nav-links">
         <a href="home.html">Главная</a>
-        <a href="#">Каталог</a>
+        <a href="katalog.html">Каталог</a>
         <a href="material.html">Материалы и комплектующие</a>
         <a href="support.html">Поддержка</a>
         <a href="company.html">О компании</a>
@@ -256,9 +241,9 @@
     <div class="footer">
       <div class="footer-links">
         <a href="company.html">О компании</a>
-      <a href="support.html">Связаться с нами</a>
-      <a href="order.html">Способы оплаты</a>
-           </div>
+        <a href="support.html">Связаться с нами</a>
+        <a href="order.html">Способы оплаты</a>
+      </div>
       <p>&copy; 2025 Все права защищены</p>
     </div>
   </div>
@@ -267,8 +252,8 @@
     // Пример списка товаров
     const products = [
       {id: 1, name: 'COMGROW T500', price: 120000, imgSrc: 'images/comgrow_t500.png'},
-      {id: 2, name: 'Bambu Lab P1S', price: 68000, imgSrc: 'images/bambu lab p1s.png'},
-      {id: 3, name: 'Creality printer', price: 55000, imgSrc: 'images/creality printer.png'},
+      {id: 2, name: 'Bambu Lab P1S', price: 68000, imgSrc: 'images/bambu_lab_p1s.png'},
+      {id: 3, name: 'Creality printer', price: 55000, imgSrc: 'images/creality_printer.png'},
       {id: 4, name: 'Creality Ender-3 V3 SE', price: 20000, imgSrc: 'images/creality_ender3_v3_se.png'},
       {id: 5, name: 'Creality K2 Plus Combo', price: 180000, imgSrc: 'images/creality_k2_plus_combo.png'},
       {id: 6, name: 'QIDI Tech X-Max 3', price: 88000, imgSrc: 'images/qidi_tech_x_max_3.png'},
