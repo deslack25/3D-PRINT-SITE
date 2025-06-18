@@ -15,7 +15,6 @@
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f9f9f9;
-      color: #333;
     }
 
     .container {
@@ -30,7 +29,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 10px 0;
       border-bottom: 2px solid #ccc;
     }
 
@@ -38,16 +37,38 @@
       height: 40px;
     }
 
+    /* Navigation Links */
+    .header .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
     .header .nav-links a {
-      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      display: flex;
+      align-items: center;  /* Vertically center the text */
+    }
+
+    .header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .header .icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header .icons a {
       text-decoration: none;
       color: #333;
       font-size: 16px;
     }
 
-    .header .icons img {
-      width: 24px;
-      margin-left: 20px;
+    .header .icons a:hover {
+      text-decoration: underline;
     }
 
     /* About Us Section */
@@ -105,55 +126,6 @@
       background-color: #45a049;
     }
 
-    /* Стили для ссылок в футере */
-    .footer-links a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    /* Адаптивность для мобильных устройств */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .header .nav-links {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .header .nav-links a {
-        margin: 5px 0;
-      }
-
-      .about-us {
-        margin-top: 20px;
-      }
-
-      .about-us h2 {
-        font-size: 28px;
-      }
-
-      .about-us p {
-        font-size: 16px;
-        margin: 0 20px;
-      }
-
-      .footer .footer-info p {
-        font-size: 14px;
-      }
-
-      .footer .subscribe input,
-      .footer .subscribe button {
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -161,7 +133,7 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
-<img src="images/лого.png" >
+ <img src="images/лого.png" >
       <div class="nav-links">
         <a href="home.html">Главная</a>
         <a href="katalog.html">Каталог</a>
@@ -183,12 +155,9 @@
 
   <!-- Footer -->
   <div class="footer">
-    <div class="footer-links">
-      <a href="company.html">О компании</a>
-      <a href="order.html">Способы оплаты</a>
-      <p>Подпишитесь на нашу рассылку новостей</p>
+    <div class="footer-info">
     </div>
-    <p>&copy; 2025 Все права защищены</p>
+        <p>&copy; 2025 Все права защищены</p>
   </div>
 
 </body>
