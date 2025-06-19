@@ -31,7 +31,7 @@
       align-items: center;
       padding: 10px 0;
       border-bottom: 2px solid #ccc;
-      flex-wrap: wrap; /* Для мобильных устройств */
+      flex-wrap: wrap;
     }
 
     .header .logo {
@@ -45,7 +45,7 @@
       gap: 20px;
       list-style: none;
       margin: 0;
-      flex-wrap: wrap; /* Перенос кнопок на мобильных устройствах */
+      flex-wrap: wrap;
     }
 
     .header .nav-links a {
@@ -60,10 +60,9 @@
       text-decoration: underline;
     }
 
-    /* User Icon */
     .header .icons {
       display: flex;
-      justify-content: center; /* Центрируем кнопку пользователя */
+      justify-content: center;
       gap: 20px;
     }
 
@@ -433,9 +432,10 @@
       return code;
     }
 
-    // Функция для закрытия окна с информацией о заказе
+    // Функция для закрытия окна с информацией о заказе и перехода на страницу "Домой"
     function closeOrderSummary() {
       document.getElementById('orderSummaryModal').style.display = 'none';
+      window.location.href = "home.html"; // Переход на страницу home.html
     }
 
     // Инициализация корзины
