@@ -42,8 +42,16 @@
       height: 40px;
     }
 
+    .header .nav-links {
+      display: flex;
+      justify-content: center; /* Выравнивание по центру */
+      align-items: center; /* Выравнивание по вертикали */
+      flex-wrap: wrap; /* Для переноса элементов на мобильных устройствах */
+      margin: 0;
+    }
+
     .header .nav-links a {
-      margin-left: 20px;
+      margin: 10px; /* Расстояние между кнопками */
       text-decoration: none;
       color: #333;
       font-size: 16px;
@@ -162,6 +170,69 @@
     .footer .subscribe button:hover {
       background-color: #45a049;
     }
+
+    /* Адаптивность для мобильных устройств */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      .header .nav-links a {
+        margin: 10px 0;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr; /* Один товар в ряду */
+        gap: 20px;
+      }
+
+      .product {
+        width: 100%;
+        max-width: none;
+      }
+
+      .page-title {
+        font-size: 18px;
+      }
+
+      .footer .subscribe input {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-title {
+        font-size: 16px;
+      }
+
+      .product .product-name {
+        font-size: 16px;
+      }
+
+      .product .product-price {
+        font-size: 14px;
+      }
+
+      .product button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .footer-links a {
+        font-size: 14px;
+      }
+
+      .footer .subscribe input,
+      .footer .subscribe button {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -205,12 +276,12 @@
     // Пример списка товаров
     const products = [
       {id: 1, name: 'COMGROW T500', price: 120000, imgSrc: 'images/comgrow_t500.png', link: 'comgrow.html'},
-        {id: 2, name: 'Bambu Lab P1S', price: 68000, imgSrc: 'images/bambu lab p1s.png', link: 'bambu lab p1s.html'}, 
-{id: 3, name: 'Creality printer', price: 55000, imgSrc: 'images/creality printer.png', link: 'creality printer.html'},
+      {id: 2, name: 'Bambu Lab P1S', price: 68000, imgSrc: 'images/bambu lab p1s.png', link: 'bambu lab p1s.html'}, 
+      {id: 3, name: 'Creality printer', price: 55000, imgSrc: 'images/creality printer.png', link: 'creality printer.html'},
       {id: 4, name: 'Creality Ender-3 V3 SE', price: 20000, imgSrc: 'images/creality_ender3_v3_se.png', link: 'creality ender-3 v3 se.html'},
       {id: 5, name: 'Creality K2 Plus Combo', price: 180000, imgSrc: 'images/creality_k2_plus_combo.png', link: 'creality k2 plus combo.html'},
       {id: 6, name: 'QIDI Tech X-Max 3', price: 88000, imgSrc: 'images/qidi_tech_x_max_3.png', link: 'qidi tech x-max 3.html'},
-     {id: 7, name: 'Creality K1A', price: 40000, imgSrc: 'images/creality_k1a.png', link: 'creality k1a.html'},
+      {id: 7, name: 'Creality K1A', price: 40000, imgSrc: 'images/creality_k1a.png', link: 'creality k1a.html'},
       {id: 8, name: 'QIDI Tech X-Plus', price: 75000, imgSrc: 'images/qidi_tech_x_plus.png', link: 'qidi tech x-plus.html'}, 
       {id: 9, name: 'Elegoo Saturn 3 12k', price: 39000, imgSrc: 'images/elegoo_saturn_3_12k.png', link: 'elegoo saturn 3 12k.html'} 
     ];
