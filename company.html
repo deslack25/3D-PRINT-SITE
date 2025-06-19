@@ -31,6 +31,7 @@
       align-items: center;
       padding: 10px 0;
       border-bottom: 2px solid #ccc;
+      flex-wrap: wrap;
     }
 
     .header .logo {
@@ -40,8 +41,12 @@
     /* Navigation Links */
     .header .nav-links {
       display: flex;
+      justify-content: center; /* Центрирование кнопок */
+      align-items: center; /* Выравнивание по вертикали */
       gap: 20px;
       list-style: none;
+      margin: 0;
+      flex-wrap: wrap; /* Подгоняет кнопки на мобильных устройствах */
     }
 
     .header .nav-links a {
@@ -49,7 +54,7 @@
       color: #333;
       font-size: 16px;
       display: flex;
-      align-items: center;  /* Vertically center the text */
+      align-items: center;  /* Вертикальное выравнивание текста */
     }
 
     .header .nav-links a:hover {
@@ -126,6 +131,68 @@
       background-color: #45a049;
     }
 
+    /* Адаптивность для мобильных устройств */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      .header .nav-links a {
+        margin: 10px 0;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr; /* Один товар в ряду */
+        gap: 20px;
+      }
+
+      .product {
+        width: 100%;
+        max-width: none;
+      }
+
+      .page-title {
+        font-size: 18px;
+      }
+
+      .footer .subscribe input {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-title {
+        font-size: 16px;
+      }
+
+      .product .product-name {
+        font-size: 16px;
+      }
+
+      .product .product-price {
+        font-size: 14px;
+      }
+
+      .product button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .footer-links a {
+        font-size: 14px;
+      }
+
+      .footer .subscribe input,
+      .footer .subscribe button {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -133,7 +200,7 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
- <img src="images/лого.png" >
+      <img src="images/лого.png" >
       <div class="nav-links">
         <a href="home.html">Главная</a>
         <a href="katalog.html">Каталог</a>
