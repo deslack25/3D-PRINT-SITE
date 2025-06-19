@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Убрали увеличение масштаба -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.5"> <!-- Увеличен масштаб -->
   <title>3D Принтеры</title>
   <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">
   <style>
@@ -58,8 +58,27 @@
 
     .slider img {
       width: 100%;
-      height: auto; /* Убираем увеличение на мобильных устройствах */
+      height: 100%;
       object-fit: cover;
+    }
+
+    .slider .prev, .slider .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .slider .prev {
+      left: 15px; /* Увеличено расстояние */
+    }
+
+    .slider .next {
+      right: 15px; /* Увеличено расстояние */
     }
 
     /* Блок товаров */
@@ -190,7 +209,7 @@
       background-color: #2980b9;
     }
 
-    /* Адаптивность для мобильных устройств */
+ /* Адаптивность для мобильных устройств */
     @media (max-width: 768px) {
       .navbar {
         display: flex;
@@ -233,6 +252,29 @@
         font-size: 14px;
       }
     }
+/* Стили для ссылок в футере */
+.footer-links a {
+  text-decoration: none;  /* Убираем подчеркивание */
+  color: #fff;  /* Белый цвет текста */
+  font-size: 18px;  /* Устанавливаем размер шрифта */
+  display: block;  /* Каждая ссылка на новой строке */
+  margin-bottom: 10px;  /* Отступ между ссылками */
+}
+
+    /* Дополнительные стили для мобильных устройств */
+    @media (max-width: 480px) {
+      .text-56 {
+        font-size: 20px;
+      }
+
+      .product-name {
+        font-size: 16px;
+      }
+
+      .product-price {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -252,6 +294,7 @@
   <!-- Слайдер -->
   <div class="slider">
     <img src="images/rectangle-1-8.png" class="rectangle-1-8" alt="Принтеры">
+    
   </div>
   
   <!-- Информация о принтерах -->
@@ -315,6 +358,7 @@
       <a href="company.html">О компании</a>
       <a href="support.html">Связаться с нами</a>
       <a href="order.html">Способы оплаты</a>
+      
     </div>
   </div>
 </body>
