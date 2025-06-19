@@ -80,201 +80,6 @@
     .slider .next {
       right: 15px; /* Увеличено расстояние */
     }
-
-    /* Блок товаров */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px; /* Увеличено расстояние между элементами */
-      justify-items: center;
-      margin: 60px 0; /* Увеличен отступ сверху и снизу */
-      padding: 0 30px; /* Увеличен padding */
-    }
-
-    .product-item {
-      background-color: #fff;
-      padding: 25px; /* Увеличено padding */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 100%;
-      max-width: 450px; /* Увеличена максимальная ширина */
-      box-sizing: border-box;
-    }
-
-    .product-item img {
-      width: 100%;
-      height: auto;
-    }
-
-    .product-name {
-      font-size: 24px; /* Увеличен размер шрифта */
-      margin: 15px 0; /* Увеличены отступы */
-    }
-
-    .product-price {
-      font-size: 20px; /* Увеличен размер шрифта */
-      color: #2c3e50;
-    }
-
-    /* Кнопка для просмотра */
-    .see-all {
-      text-align: center;
-      margin: 30px 0; /* Увеличен отступ */
-    }
-
-    .btn-see-all {
-      background-color: #ffffff;
-      color: white;
-      padding: 15px 30px; /* Увеличено padding */
-      border: none;
-      border-radius: 8px; /* Увеличен радиус */
-      cursor: pointer;
-      font-size: 20px; /* Увеличен размер шрифта */
-    }
-
-    .btn-see-all:hover {
-      background-color: #2980b9;
-    }
-
-    /* Информация о принтерах */
-    .about-printers {
-      text-align: center;
-      margin: 30px 0; /* Увеличен отступ */
-    }
-
-    .text-53 {
-      font-size: 27px; /* Увеличен размер шрифта */
-      color: #34495e;
-      margin-bottom: 30px; /* Увеличен отступ */
-    }
-
-    .text-56 {
-      font-size: 36px; /* Увеличен размер шрифта */
-      font-weight: bold;
-      color: #2c3e50;
-    }
-
-    /* Модели */
-    .models {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px; /* Увеличено расстояние */
-      justify-items: center;
-      margin: 60px 0; /* Увеличен отступ */
-    }
-
-    .model-item img {
-      width: 225px; /* Увеличены размеры изображений */
-      height: 225px;
-      object-fit: cover;
-    }
-
-    /* Футер */
-    .footer {
-      background-color: #2c3e50;
-      color: white;
-      padding: 45px 30px; /* Увеличен padding */
-      text-align: center;
-    }
-
-    .footer-logo p {
-      font-size: 45px; /* Увеличен размер шрифта */
-      font-weight: bold;
-    }
-
-    .footer-links p {
-      margin: 15px 0; /* Увеличены отступы */
-      font-size: 24px; /* Увеличен размер шрифта */
-    }
-
-    .subscribe input {
-      padding: 15px; /* Увеличен padding */
-      margin-right: 15px; /* Увеличен отступ */
-      border: none;
-      border-radius: 8px; /* Увеличен радиус */
-      font-size: 20px; /* Увеличен размер шрифта */
-    }
-
-    .subscribe button {
-      padding: 15px 30px; /* Увеличен padding */
-      background-color: #ffffff;
-      color: white;
-      border: none;
-      border-radius: 8px; /* Увеличен радиус */
-      font-size: 20px; /* Увеличен размер шрифта */
-      cursor: pointer;
-    }
-
-    .subscribe button:hover {
-      background-color: #2980b9;
-    }
-
- /* Адаптивность для мобильных устройств */
-    @media (max-width: 768px) {
-      .navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .navbar a {
-        margin: 10px 0;
-      }
-
-      .products {
-        grid-template-columns: 1fr; /* Один товар в ряду */
-        gap: 20px;
-      }
-
-      .product-item {
-        width: 100%;
-        max-width: none;
-      }
-
-      .slider {
-        height: 200px;
-      }
-
-      .btn-see-all {
-        font-size: 16px;
-        padding: 10px 20px;
-      }
-
-      .footer-logo p {
-        font-size: 24px;
-      }
-
-      .footer-links p {
-        font-size: 14px;
-      }
-
-      .subscribe input, .subscribe button {
-        font-size: 14px;
-      }
-    }
-/* Стили для ссылок в футере */
-.footer-links a {
-  text-decoration: none;  /* Убираем подчеркивание */
-  color: #fff;  /* Белый цвет текста */
-  font-size: 18px;  /* Устанавливаем размер шрифта */
-  display: block;  /* Каждая ссылка на новой строке */
-  margin-bottom: 10px;  /* Отступ между ссылками */
-}
-
-    /* Дополнительные стили для мобильных устройств */
-    @media (max-width: 480px) {
-      .text-56 {
-        font-size: 20px;
-      }
-
-      .product-name {
-        font-size: 16px;
-      }
-
-      .product-price {
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -293,73 +98,22 @@
 
   <!-- Слайдер -->
   <div class="slider">
-    <img src="images/rectangle-1-8.png" class="rectangle-1-8" alt="Принтеры">
-    
-  </div>
-  
-  <!-- Информация о принтерах -->
-  <div class="about-printers">
-    <p class="text-53">
-      Мы предлагаем широкий выбор 3D-принтеров, подходящих как для начинающих, так и для профессионалов.
-      Надежность, точность и инновационные технологии — вот что отличает каждую нашу модель.
-    </p>
-    <p class="text-56">НАШИ ПРИНТЕРЫ</p>
+    <img src="images/rectangle-1-8.png" id="sliderImage" class="rectangle-1-8" alt="Принтеры">
+    <button class="prev" onclick="changeImage('prev')">&#10094;</button>
+    <button class="next" onclick="changeImage('next')">&#10095;</button>
   </div>
 
-  <!-- Блок с товарами -->
-  <div class="products">
-    <div class="product-item">
-      <img src="images/h_creality_ender3_v3_se.png" alt="Creative Ender-3 V3 SE" />
-      <p class="product-name">Creality Ender-3 V3 SE</p>
-      <p class="product-price">20,000 руб</p>
-    </div>
-    <div class="product-item">
-      <img src="images/h_comgrow_t500.png" alt="COMGROW T500" />
-      <p class="product-name">COMGROW T500</p>
-      <p class="product-price">120,000 руб</p>
-    </div>
-    <div class="product-item">
-      <img src="images/h_creality_k1a.png" alt="Creality K1A" />
-      <p class="product-name">Creality K1A</p>
-      <p class="product-price">40,000 руб</p>
-    </div>
-    <div class="product-item">
-      <img src="images/h_bambu lab p1s.png" alt="Bambu Lab P1S" />
-      <p class="product-name">Bambu Lab P1S</p>
-      <p class="product-price">68,000 руб</p>
-    </div>
-    <div class="product-item">
-      <img src="images/h_creality printer.png" alt="Creality" />
-      <p class="product-name">Creality</p>
-      <p class="product-price">55,000 руб</p>
-    </div>
-    <div class="product-item">
-      <img src="images/h_creality_k2_plus_combo.png" alt="Creality K2 Plus Combo" />
-      <p class="product-name">Creality K2 Plus Combo</p>
-      <p class="product-price">180,000 руб</p>
-    </div>
-  </div>
-  
-  <!-- Кнопка для просмотра всех принтеров -->
-  <div style="text-align: center; margin-top: 20px;">
-    <a href="katalog.html">
-      <button style="padding: 15px 30px; background-color: #007BFF; color: white; border: none; border-radius: 8px; cursor: pointer;">
-        Посмотреть все принтеры
-      </button>
-    </a>
-  </div>
+  <script>
+    // Функция для смены изображения
+    function changeImage(direction) {
+      var image = document.getElementById("sliderImage");
+      if (direction === 'next') {
+        image.src = 'images/rectangle-1-9.png';  // Меняем на второе изображение
+      } else if (direction === 'prev') {
+        image.src = 'images/rectangle-1-8.png';  // Меняем обратно на первое изображение
+      }
+    }
+  </script>
 
-  <!-- Футер с информацией -->
-  <div class="footer">
-    <div class="footer-logo">
-      <p>LOGO</p>
-    </div>
-    <div class="footer-links">
-      <a href="company.html">О компании</a>
-      <a href="support.html">Связаться с нами</a>
-      <a href="order.html">Способы оплаты</a>
-      
-    </div>
-  </div>
 </body>
 </html>
