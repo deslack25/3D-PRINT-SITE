@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>3D Принтеры</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Printers</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins|Lato&display=swap" rel="stylesheet">
   <style>
     /* Reset and global styles */
     * {
@@ -24,18 +25,22 @@
       margin: 0 auto;
       padding: 0 15px;
     }
+/* Стили для ссылок в футере */
+.footer-links a {
+  text-decoration: none;  /* Убираем подчеркивание */
+  color: #fff;  /* Белый цвет текста */
+  font-size: 18px;  /* Устанавливаем размер шрифта */
+  display: block;  /* Каждая ссылка на новой строке */
+  margin-bottom: 10px;  /* Отступ между ссылками */
+}
 
     /* Header */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      width: 100%;
-      background-color: #fff;
+      padding: 20px 0;
       border-bottom: 2px solid #ccc;
-      max-width: 1200px; /* Ограничиваем ширину */
-      margin: 0 auto; /* Центрируем панель */
     }
 
     .header .logo {
@@ -51,14 +56,17 @@
 
     .header .icons img {
       width: 24px;
-      height: 24px;
-      cursor: pointer; /* Сделаем курсор указателем, когда наводим на картинку */
-      transition: transform 0.2s; /* Плавное изменение */
+      margin-left: 20px;
     }
 
-    /* Эффект при наведении на картинку */
-    .header .icons img:hover {
-      transform: scale(1.1); /* Увеличиваем картинку немного при наведении */
+    /* Search bar */
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
     /* Title */
@@ -68,9 +76,9 @@
     }
 
     /* Product grid */
-    .product-container {
+    .products {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
       margin-top: 40px;
     }
@@ -89,6 +97,7 @@
 
     .product img {
       width: 100%;
+      max-width: 250px;
       height: auto;
       object-fit: contain;
       margin-bottom: 10px;
@@ -127,14 +136,6 @@
       padding: 40px 20px;
       text-align: center;
       margin-top: 60px;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      display: block;
-      margin-bottom: 10px;
     }
 
     .footer-links p {
