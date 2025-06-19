@@ -209,7 +209,7 @@
       background-color: #2980b9;
     }
 
-    /* Адаптивность для мобильных устройств */
+ /* Адаптивность для мобильных устройств */
     @media (max-width: 768px) {
       .navbar {
         display: flex;
@@ -252,16 +252,29 @@
         font-size: 14px;
       }
     }
+/* Стили для ссылок в футере */
+.footer-links a {
+  text-decoration: none;  /* Убираем подчеркивание */
+  color: #fff;  /* Белый цвет текста */
+  font-size: 18px;  /* Устанавливаем размер шрифта */
+  display: block;  /* Каждая ссылка на новой строке */
+  margin-bottom: 10px;  /* Отступ между ссылками */
+}
 
-    /* Стили для ссылок в футере */
-    .footer-links a {
-      text-decoration: none;  /* Убираем подчеркивание */
-      color: #fff;  /* Белый цвет текста */
-      font-size: 18px;  /* Устанавливаем размер шрифта */
-      display: block;  /* Каждая ссылка на новой строке */
-      margin-bottom: 10px;  /* Отступ между ссылками */
+    /* Дополнительные стили для мобильных устройств */
+    @media (max-width: 480px) {
+      .text-56 {
+        font-size: 20px;
+      }
+
+      .product-name {
+        font-size: 16px;
+      }
+
+      .product-price {
+        font-size: 14px;
+      }
     }
-
   </style>
 </head>
 <body>
@@ -280,42 +293,11 @@
 
   <!-- Слайдер -->
   <div class="slider">
-    <img id="sliderImage" src="images/rectangle-1-8.png" class="rectangle-1-8" alt="Принтеры">
+    <img src="images/rectangle-1-8.png" class="rectangle-1-8" alt="Принтеры">
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
   </div>
-
-  <script>
-    // Список изображений для слайдера
-    const images = [
-      "images/rectangle-1-8.png",
-      "images/rectangle-1-9.png"
-    ];
-    let currentIndex = 0;
-
-    // Получаем элементы изображения и кнопок
-    const sliderImage = document.getElementById("sliderImage");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-
-    // Функция для обновления изображения
-    function updateImage(index) {
-      sliderImage.src = images[index];
-    }
-
-    // Обработчик для кнопки "предыдущее изображение"
-    prevButton.addEventListener("click", function() {
-      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-      updateImage(currentIndex);
-    });
-
-    // Обработчик для кнопки "следующее изображение"
-    nextButton.addEventListener("click", function() {
-      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-      updateImage(currentIndex);
-    });
-  </script>
-
+  
   <!-- Информация о принтерах -->
   <div class="about-printers">
     <p class="text-53">
@@ -377,6 +359,7 @@
       <a href="company.html">О компании</a>
       <a href="support.html">Связаться с нами</a>
       <a href="order.html">Способы оплаты</a>
+      
     </div>
   </div>
 </body>
