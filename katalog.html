@@ -162,71 +162,16 @@
     .footer .subscribe button:hover {
       background-color: #45a049;
     }
-
-    /* Адаптивность для мобильных устройств */
-    @media (max-width: 768px) {
-      /* Header */
-      .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-      }
-
-      .header .nav-links {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .header .nav-links a {
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      .header .icons {
-        margin-top: 15px;
-      }
-
-      /* Product grid */
-      .product-container {
-        grid-template-columns: 1fr 1fr; /* 2 столбца на мобильных устройствах */
-      }
-
-      .product {
-        padding: 15px;
-      }
-
-      .product .product-name {
-        font-size: 16px;
-      }
-
-      .product .product-price {
-        font-size: 18px;
-      }
-
-      .product button {
-        font-size: 14px;
-        padding: 8px 16px;
-      }
-
-      /* Footer */
-      .footer .subscribe input {
-        width: 100%;
-      }
-
-      .footer .subscribe button {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- Header -->
     <div class="header">
-      <img src="images/лого.png" alt="Логотип" class="logo">
+      <img src="images/лого.png" >
       <div class="nav-links">
         <a href="home.html">Главная</a>
-        <a href="katalog.html">Каталог</a>
+        <a href="#">Каталог</a>
         <a href="material.html">Материалы и комплектующие</a>
         <a href="support.html">Поддержка</a>
         <a href="company.html">О компании</a>
@@ -260,14 +205,14 @@
     // Пример списка товаров
     const products = [
       {id: 1, name: 'COMGROW T500', price: 120000, imgSrc: 'images/comgrow_t500.png', link: 'comgrow.html'},
-      {id: 2, name: 'Bambu Lab P1S', price: 68000, imgSrc: 'images/bambu_lab_p1s.png', link: 'bambu_lab_p1s.html'},
-      {id: 3, name: 'Creality printer', price: 55000, imgSrc: 'images/creality_printer.png', link: 'creality_printer.html'},
-      {id: 4, name: 'Creality Ender-3 V3 SE', price: 20000, imgSrc: 'images/creality_ender3_v3_se.png', link: 'creality_ender-3_v3_se.html'},
-      {id: 5, name: 'Creality K2 Plus Combo', price: 180000, imgSrc: 'images/creality_k2_plus_combo.png', link: 'creality_k2_plus_combo.html'},
-      {id: 6, name: 'QIDI Tech X-Max 3', price: 88000, imgSrc: 'images/qidi_tech_x_max_3.png', link: 'qidi_tech_x_max_3.html'},
-      {id: 7, name: 'Creality K1A', price: 40000, imgSrc: 'images/creality_k1a.png', link: 'creality_k1a.html'},
-      {id: 8, name: 'QIDI Tech X-Plus', price: 75000, imgSrc: 'images/qidi_tech_x_plus.png', link: 'qidi_tech_x_plus.html'},
-      {id: 9, name: 'Elegoo Saturn 3 12k', price: 39000, imgSrc: 'images/elegoo_saturn_3_12k.png', link: 'elegoo_saturn_3_12k.html'}
+        {id: 2, name: 'Bambu Lab P1S', price: 68000, imgSrc: 'images/bambu lab p1s.png', link: 'bambu lab p1s.html'}, 
+{id: 3, name: 'Creality printer', price: 55000, imgSrc: 'images/creality printer.png', link: 'creality printer.html'},
+      {id: 4, name: 'Creality Ender-3 V3 SE', price: 20000, imgSrc: 'images/creality_ender3_v3_se.png', link: 'creality ender-3 v3 se.html'},
+      {id: 5, name: 'Creality K2 Plus Combo', price: 180000, imgSrc: 'images/creality_k2_plus_combo.png', link: 'creality k2 plus combo.html'},
+      {id: 6, name: 'QIDI Tech X-Max 3', price: 88000, imgSrc: 'images/qidi_tech_x_max_3.png', link: 'qidi tech x-max 3.html'},
+     {id: 7, name: 'Creality K1A', price: 40000, imgSrc: 'images/creality_k1a.png', link: 'creality k1a.html'},
+      {id: 8, name: 'QIDI Tech X-Plus', price: 75000, imgSrc: 'images/qidi_tech_x_plus.png', link: 'qidi tech x-plus.html'}, 
+      {id: 9, name: 'Elegoo Saturn 3 12k', price: 39000, imgSrc: 'images/elegoo_saturn_3_12k.png', link: 'elegoo saturn 3 12k.html'} 
     ];
 
     // Функция для отображения каталога товаров
