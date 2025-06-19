@@ -27,10 +27,11 @@
     /* Header */
     .header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* Центрируем все элементы в шапке */
       align-items: center;
       padding: 10px 0;
       border-bottom: 2px solid #ccc;
+      flex-wrap: wrap; /* Для мобильных устройств */
     }
 
     .header .logo {
@@ -40,8 +41,11 @@
     /* Navigation Links */
     .header .nav-links {
       display: flex;
+      justify-content: center; /* Центрируем кнопки */
       gap: 20px;
       list-style: none;
+      margin: 0;
+      flex-wrap: wrap; /* Перенос кнопок на мобильных устройствах */
     }
 
     .header .nav-links a {
@@ -49,15 +53,17 @@
       color: #333;
       font-size: 16px;
       display: flex;
-      align-items: center;  
+      align-items: center;
     }
 
     .header .nav-links a:hover {
       text-decoration: underline;
     }
 
+    /* User Icon */
     .header .icons {
       display: flex;
+      justify-content: center; /* Центрируем кнопку пользователя */
       gap: 20px;
     }
 
@@ -229,7 +235,7 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
-      <img src="images/лого.png" >
+      <img src="images/лого.png" alt="Логотип">
       <div class="nav-links">
         <a href="home.html">Домой</a>
         <a href="katalog.html">Каталог</a>
@@ -277,6 +283,7 @@
       <!-- Поле для ввода мобильного телефона -->
       <label for="phoneNumber" id="phoneLabel" style="display:none;">Мобильный телефон</label>
       <input type="text" id="phoneNumber" placeholder="Введите мобильный телефон" style="display:none;">
+
 
       <button onclick="placeOrder()">Подтвердить заказ</button>
       <button class="close-btn" onclick="closeOrderForm()">Закрыть</button>
@@ -410,7 +417,7 @@
     function generateOrderCode() {
       const letters = 'abc'; // Буквы от a до c
       const numbers = '0123456789'; // Цифры от 0 до 9
-      let code = '';
+      let code = '' ;
 
       // Генерация первых 3 букв
       for (let i = 0; i < 3; i++) {
