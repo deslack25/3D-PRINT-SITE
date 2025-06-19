@@ -266,7 +266,7 @@
       <h3>Оформление заказа</h3>
       
       <label for="cardNumber">Номер карты</label>
-      <input type="text" id="cardNumber" placeholder="Введите номер карты">
+      <input type="tel" id="cardNumber" placeholder="Введите номер карты" oninput="restrictInput(event, 'card')">
 
       <label for="deliveryType">Тип доставки</label>
       <select id="deliveryType" onchange="toggleDeliveryFields()">
@@ -281,7 +281,7 @@
 
       <!-- Поле для ввода мобильного телефона -->
       <label for="phoneNumber" id="phoneLabel" style="display:none;">Мобильный телефон</label>
-      <input type="text" id="phoneNumber" placeholder="Введите мобильный телефон" style="display:none;">
+      <input type="tel" id="phoneNumber" placeholder="Введите мобильный телефон" style="display:none;" oninput="restrictInput(event, 'phone')">
 
 
       <button onclick="placeOrder()">Подтвердить заказ</button>
@@ -366,6 +366,16 @@
       }
     }
 
+    // Функция для ограничения ввода только цифр в поле карты и телефона
+    function restrictInput(event, type) {
+      const input = event.target;
+      const value = input.value;
+
+      if (type === 'card' || type === 'phone') {
+        input.value = value.replace(/[^\d]/g, '');  // Убираем все символы, кроме цифр
+      }
+    }
+
     // Функция для оформления заказа
     function placeOrder() {
       const cardNumber = document.getElementById('cardNumber').value;
@@ -434,7 +444,7 @@
 
     // Функция для закрытия окна с информацией о заказе и перехода на страницу "Домой"
     function closeOrderSummary() {
-      
+      document.getElementById('orderSummaryModal').style.display = 'none';
       window.location.href = "home.html"; // Переход на страницу home.html
     }
 
