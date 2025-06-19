@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Принтер QIDI Tech X-Plus</title>
+  
+  <!-- Иконка для панели задач -->
+  <link rel="icon" href="images/лого.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins|Lato&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and global styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      overflow-x: hidden; /* Отключаем горизонтальный скроллинг */
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .header .logo {
+      height: 40px;
+    }
+
+    .header .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .header .icons img {
+      width: 24px;
+      margin-left: 20px;
+    }
+
+    /* Title */
+    .page-title {
+      font-size: 24px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    /* Product Details */
+    .product-details {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      text-align: left;
+      height: auto; /* Убираем 100vh, чтобы избежать чрезмерного растягивания */
+    }
+
+    .product-images {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Размещение элементов по вертикали */
+    }
+
+    .product-images img {
+      width: 100%;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .product-info {
+      width: 100%;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Выровнять по центру */
+      justify-content: flex-start;
+    }
+
+    .product-info h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      margin-top: 20px; /* Отступ сверху для отдаления от картинки */
+    }
+
+    .product-info .rating {
+      margin-top: 10px;
+    }
+
+    .product-info .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .product-info button {
+      padding: 12px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .product-info button:hover {
+      background-color: #45a049;
+    }
+
+    /* Product Description */
+    .product-description {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 45%; /* Для того чтобы описание занимало 45% ширины */
+      height: auto; /* Высота подстраивается под контент */
+      overflow-y: auto; /* Если описание длинное, появляется прокрутка */
+      padding-top: 40px;
+    }
+
+    .product-description h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .product-description p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Адаптивность для мобильных устройств */
+    @media (max-width: 768px) {
+      .product-details {
+        flex-direction: column;
+      }
+
+      .product-images {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .product-info {
+        width: 100%;
+        text-align: center;
+      }
+
+      .product-info h2 {
+        font-size: 22px;
+      }
+
+      .product-info .price {
+        font-size: 20px;
+      }
+
+      .product-info button {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+
+      .product-description {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .footer-logo p {
+        font-size: 24px;
+      }
+
+      .footer-links p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+     <img src="images/лого.png" >
+      <div class="nav-links">
+        <a href="home.html">Главная</a>
+        <a href="katalog.html">Каталог</a>
+        <a href="material.html">Материалы и комплектующие</a>
+        <a href="support.html">Поддержка</a>
+        <a href="company.html">О компании</a>
+      </div>
+      <div class="icons">
+        <a href="order.html"><img src="images/order.png" alt="Корзина"></a>
+        <a href="user.html"><img src="images/user.png" alt="Пользователь"></a>
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <h2 class="page-title">QIDI Tech X-Plus</h2>
+
+    <div class="product-details">
+      <!-- Product Images -->
+      <div class="product-images">
+        <img src="images/qidi_tech_x_plus.png" alt="QIDI Tech X-Plus">
+        <div class="product-info">
+          <h2>QIDI Tech X-Plus</h2>
+          <div class="rating">
+            <!-- Рейтинг товара (если нужно) -->
+          </div>
+          <p class="price">75,000 руб</p>
+          <button onclick="goBack()">Вернуться</button>  <!-- Обработчик события -->
+        </div>
+      </div>
+
+      <!-- Product Description -->
+      <div class="product-description">
+        <h3>Описание товара</h3>
+        <p>3D принтер QIDI Tech X-Plus предназначен для FDM печати разными видами пластика. Благодаря закрытой камере с возможностью поддержания высокой температуры, принтер позволяет изготовить детали высокого качества из ABS, PETG, PLA и других материалов.
+Общие
+Бренд	QIDI
+Страна производитель	Китай
+Основные
+Материал печати	Пластиковая нить
+Технология печати	FDM / FFF
+DIY (набор для сборки)	Нет
+Корпус принтера	Закрытый
+Диаметр нити	1.75 мм
+Тип экструдера	Direct
+Кол-во печатающих сопел	1 шт.
+Температура экструдера	300 °С
+Температура стола	120 °С
+Область печати	270х200х200 мм
+Направляющие	Валы
+Калибровка	Автоматическая
+Скорость печати / выращивания	60 - 150 мм/с
+Толщина слоя	50 мкм
+Полноцветная печать	Нет
+Подогреваемый стол	Да
+Высокотемпературная печать	Нет
+Видеокамера	Нет
+Контроль наличия пластика	Да
+Система возобновления печати	Да
+Программное обеспечение
+Совместимые ОС	Windows, Mac OS, Linux
+Дополнительная информация
+Комплект поставки	3D принтер QIDI Tech X-Plus; Боковые панели с магнитами; Акриловая крышка; Съемная рабочая пластина с двойным покрытием; Экструдер на 250 °C; Внутренний держатель катушки филамента; Внешний держатель катушки филамента; Катушка филамента; USB-накопитель емкостью 16 гб; Клей-карандаш; Годовая гарантия; Руководство пользователя; Бумага для калибровки платформы; Сетевой кабель; Блок питания; Базовый набор инструментов (зажимы, насадки, патрубки и отвертка).
+Интерфейс подключения	USB (Флеш-накопитель), USB (Кабель), Ethernet (LAN), Wi-Fi
+Габаритные и вес
+Габариты товара	600х500х500 мм
+Габариты упаковки	750х650х650 мм
+Вес нетто	23 кг
+Вес брутто	31 кг</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-links">
+      <a href="company.html">О компании</a>
+      <a href="support.html">Связаться с нами</a>
+      <a href="order.html">Способы оплаты</a>
+    </div>
+    <p>&copy; 2025 Все права защищены</p>
+  </div>
+
+<script>
+    // Функция для возврата в каталог
+    function goBack() {
+      window.location.href = "katalog.html";  // Перенаправляет на страницу каталога
+    }
+  </script>
+
+</body>
+</html>
