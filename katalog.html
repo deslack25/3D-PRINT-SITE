@@ -2,10 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Printers</title>
- 
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Принтеры</title>
   <style>
     /* Reset and global styles */
     * {
@@ -26,16 +24,8 @@
       margin: 0 auto;
       padding: 0 15px;
     }
-/* Стили для ссылок в футере */
-.footer-links a {
-  text-decoration: none;  /* Убираем подчеркивание */
-  color: #fff;  /* Белый цвет текста */
-  font-size: 18px;  /* Устанавливаем размер шрифта */
-  display: block;  /* Каждая ссылка на новой строке */
-  margin-bottom: 10px;  /* Отступ между ссылками */
-}
 
-    /* Верхняя панель навигации */
+    /* Header */
     .header {
       display: flex;
       justify-content: space-between;
@@ -59,11 +49,6 @@
       font-size: 16px;
     }
 
-    /* Картинки вместо кнопок */
-    .header .icons a {
-      display: inline-block; /* Чтобы изображения располагались по горизонтали */
-    }
-
     .header .icons img {
       width: 24px;
       height: 24px;
@@ -74,16 +59,6 @@
     /* Эффект при наведении на картинку */
     .header .icons img:hover {
       transform: scale(1.1); /* Увеличиваем картинку немного при наведении */
-    }
-
-    /* Search bar */
-    .search-bar input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 20px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
     }
 
     /* Title */
@@ -154,6 +129,14 @@
       margin-top: 60px;
     }
 
+    .footer-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
     .footer-links p {
       margin: 10px 0;
       font-size: 18px;
@@ -211,9 +194,9 @@
     <div class="footer">
       <div class="footer-links">
         <a href="company.html">О компании</a>
-      <a href="support.html">Связаться с нами</a>
-      <a href="order.html">Способы оплаты</a>
-           </div>
+        <a href="support.html">Связаться с нами</a>
+        <a href="order.html">Способы оплаты</a>
+      </div>
       <p>&copy; 2025 Все права защищены</p>
     </div>
   </div>
@@ -241,7 +224,9 @@
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
         productDiv.innerHTML = `
-          <img src="${product.imgSrc}" alt="${product.name}">
+          <a href="${product.link}">
+            <img src="${product.imgSrc}" alt="${product.name}">
+          </a>
           <p class="product-name">${product.name}</p>
           <p class="product-price">${product.price} руб</p>
           <button onclick="addToCart(${product.id})">Купить</button>
