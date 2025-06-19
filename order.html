@@ -222,42 +222,6 @@
     .order-summary .close-btn:hover {
       background-color: #e74c3c;
     }
-
-    /* Адаптивность для мобильных устройств */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .header .nav-links {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .header .nav-links a {
-        margin: 5px 0;
-      }
-
-      .cart-sidebar {
-        padding: 15px;
-      }
-
-      .cart-sidebar .checkout-btn {
-        font-size: 14px;
-        padding: 10px;
-      }
-
-      .order-form {
-        width: 90%;
-      }
-
-      .order-summary {
-        width: 90%;
-      }
-    }
   </style>
 </head>
 <body>
@@ -265,7 +229,7 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
-<img src="images/лого.png" >
+      <img src="images/лого.png" >
       <div class="nav-links">
         <a href="home.html">Домой</a>
         <a href="katalog.html">Каталог</a>
@@ -309,6 +273,10 @@
         <label for="deliveryAddress">Адрес доставки</label>
         <input type="text" id="deliveryAddress" placeholder="Введите адрес">
       </div>
+
+      <!-- Поле для ввода мобильного телефона -->
+      <label for="phoneNumber" id="phoneLabel" style="display:none;">Мобильный телефон</label>
+      <input type="text" id="phoneNumber" placeholder="Введите мобильный телефон" style="display:none;">
 
       <button onclick="placeOrder()">Подтвердить заказ</button>
       <button class="close-btn" onclick="closeOrderForm()">Закрыть</button>
@@ -356,6 +324,14 @@
       renderCart();  // Перерисовываем корзину
     }
 
+    // Функция для добавления товара в корзину
+    function addToCart(product) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || []; // Получаем текущую корзину или создаем новую
+      cart.push(product); // Добавляем товар в корзину
+      localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем корзину в localStorage
+      renderCart(); // Перерисовываем корзину
+    }
+
     // Функция для показа формы оформления заказа
     function showOrderForm() {
       document.getElementById('orderFormModal').style.display = 'flex';
@@ -366,15 +342,21 @@
       document.getElementById('orderFormModal').style.display = 'none';
     }
 
-    // Функция для переключения полей адреса в зависимости от типа доставки
+    // Функция для переключения полей адреса и телефона в зависимости от типа доставки
     function toggleDeliveryFields() {
       const deliveryType = document.getElementById('deliveryType').value;
       const deliveryAddressContainer = document.getElementById('deliveryAddressContainer');
+      const phoneField = document.getElementById('phoneNumber');
+      const phoneLabel = document.getElementById('phoneLabel');
       
       if (deliveryType === 'store') {
         deliveryAddressContainer.style.display = 'none';
+        phoneField.style.display = 'none';
+        phoneLabel.style.display = 'none';
       } else {
         deliveryAddressContainer.style.display = 'block';
+        phoneField.style.display = 'block';
+        phoneLabel.style.display = 'block';
       }
     }
 
@@ -383,6 +365,7 @@
       const cardNumber = document.getElementById('cardNumber').value;
       const deliveryType = document.getElementById('deliveryType').value;
       const deliveryAddress = document.getElementById('deliveryAddress').value;
+      const phoneNumber = document.getElementById('phoneNumber').value;  // Получаем номер телефона
 
       if (!cardNumber) {
         alert('Пожалуйста, введите номер карты.');
@@ -400,7 +383,7 @@
       // Формирование информации о заказе
       let orderSummary = `Код заказа: ${orderCode}<br>Способ оплаты: Карта<br>Способ доставки: ${deliveryType === 'store' ? 'Из магазина' : 'Доставка на дом'}`;
       if (deliveryType === 'home') {
-        orderSummary += `<br>Адрес доставки: ${deliveryAddress}`;
+        orderSummary += `<br>Адрес доставки: ${deliveryAddress}<br>Мобильный телефон: ${phoneNumber}`;  // Добавляем телефон
       }
 
       // Добавляем список товаров
