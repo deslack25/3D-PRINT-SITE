@@ -2,9 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Printers</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins|Lato&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Принтеры</title>
   <style>
     /* Reset and global styles */
     * {
@@ -31,22 +30,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px;
+      padding: 10px 20px;
+      width: 100%;
+      background-color: #fff;
       border-bottom: 2px solid #ccc;
+      max-width: 1200px; /* Ограничиваем ширину */
+      margin: 0 auto; /* Центрируем панель */
     }
 
     .header .logo {
       height: 40px;
     }
 
-    .header .nav-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
     .header .nav-links a {
-      margin-left: 15px;
+      margin-left: 20px;
       text-decoration: none;
       color: #333;
       font-size: 16px;
@@ -54,18 +51,24 @@
 
     .header .icons img {
       width: 24px;
-      margin-left: 20px;
+      height: 24px;
+      cursor: pointer; /* Сделаем курсор указателем, когда наводим на картинку */
+      transition: transform 0.2s; /* Плавное изменение */
+    }
+
+    /* Эффект при наведении на картинку */
+    .header .icons img:hover {
+      transform: scale(1.1); /* Увеличиваем картинку немного при наведении */
     }
 
     /* Title */
     .page-title {
       font-size: 24px;
-      margin-top: 20px;
-      text-align: center;
+      margin-top: 30px;
     }
 
-    /* Products */
-    .products {
+    /* Product grid */
+    .product-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -86,7 +89,6 @@
 
     .product img {
       width: 100%;
-      max-width: 250px;
       height: auto;
       object-fit: contain;
       margin-bottom: 10px;
@@ -127,63 +129,38 @@
       margin-top: 60px;
     }
 
+    .footer-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
     .footer-links p {
       margin: 10px 0;
       font-size: 18px;
     }
 
-    /* Aдаптивность для мобильных устройств */
-    @media (max-width: 768px) {
-      /* Header */
-      .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-      }
+    .footer .subscribe input {
+      padding: 10px;
+      width: 250px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
 
-      .header .nav-links {
-        flex-direction: column;
-        align-items: center;
-      }
+    .footer .subscribe button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 16px;
+    }
 
-      .header .nav-links a {
-        margin-bottom: 10px;
-      }
-
-      .header .icons {
-        margin-top: 15px;
-      }
-
-      /* Products */
-      .products {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .product {
-        padding: 15px;
-      }
-
-      .product .product-name {
-        font-size: 16px;
-      }
-
-      .product .product-price {
-        font-size: 18px;
-      }
-
-      .product button {
-        font-size: 14px;
-        padding: 8px 16px;
-      }
-
-      /* Footer */
-      .footer .subscribe input {
-        width: 100%;
-      }
-
-      .footer .subscribe button {
-        width: 100%;
-      }
+    .footer .subscribe button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
@@ -191,10 +168,10 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
-      <img src="images/лого.png" alt="Логотип" class="logo">
+      <img src="images/лого.png" >
       <div class="nav-links">
         <a href="home.html">Главная</a>
-        <a href="katalog.html">Каталог</a>
+        <a href="#">Каталог</a>
         <a href="material.html">Материалы и комплектующие</a>
         <a href="support.html">Поддержка</a>
         <a href="company.html">О компании</a>
@@ -206,55 +183,11 @@
     </div>
 
     <!-- Title -->
-    <h2 class="page-title">Главная / Материалы и комплектующие</h2>
+    <h2 class="page-title">Главная / 3D Принтеры</h2>
 
-    <!-- Products -->
-    <div class="products">
-      <div class="product">
-        <img src="images/COMGROW.png" alt="COMGROW">
-        <p>COMGROW <br><span class="price">250 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('COMGROW', 250)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/PLA ESUN.png" alt="PLA ESUN">
-        <p>PLA ESUN Белый <br><span class="price">1.800 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('PLA ESUN Белый', 1800)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/Creality набор инструментов.png" alt="Creality набор инструментов">
-        <p>Creality набор инструментов <br><span class="price">1.800 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('Creality набор инструментов', 1800)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/COMGROW T500 Экран.png" alt="COMGROW T500 Экран">
-        <p>COMGROW T500 Экран <br><span class="price">58.000 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('COMGROW T500 Экран', 58000)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/Creality (плата управления).png" alt="Creality плата управления">
-        <p>Creality (плата управления) <br><span class="price">15.000 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('Creality плата управления', 15000)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/bambulab хотэнд.png" alt="bambulab хотэнд">
-        <p>bambulab хотэнд <br><span class="price">1.800 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('bambulab хотэнд', 1800)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/Creality сопло.png" alt="Creality сопло">
-        <p>Creality сопло <br><span class="price">300 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('Creality сопло', 300)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/Creality PETG.png" alt="Creality PETG">
-        <p>Creality PETG <br><span class="price">1.200 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('Creality PETG', 1200)">Купить</button>
-      </div>
-      <div class="product">
-        <img src="images/ESUN PETG.png" alt="ESUN PETG">
-        <p>ESUN PETG <br><span class="price">1.500 руб</span></p>
-        <button class="buy-btn" onclick="addToCart('ESUN PETG', 1500)">Купить</button>
-      </div>
+    <!-- Products Grid -->
+    <div class="product-container" id="catalog">
+      <!-- Товары будут динамически добавляться сюда -->
     </div>
 
     <!-- Footer -->
@@ -269,38 +202,52 @@
   </div>
 
   <script>
-    // Функция для добавления товара в корзину
-    function addToCart(productName, price) {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const product = { name: productName, price: price };
-      cart.push(product);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert(productName + " добавлен в корзину!");
-      renderCart();
-    }
+    // Пример списка товаров
+    const products = [
+      {id: 1, name: 'COMGROW T500', price: 120000, imgSrc: 'images/comgrow_t500.png', link: 'comgrow.html'},
+        {id: 2, name: 'Bambu Lab P1S', price: 68000, imgSrc: 'images/bambu lab p1s.png', link: 'bambu lab p1s.html'}, 
+{id: 3, name: 'Creality printer', price: 55000, imgSrc: 'images/creality printer.png', link: 'creality printer.html'},
+      {id: 4, name: 'Creality Ender-3 V3 SE', price: 20000, imgSrc: 'images/creality_ender3_v3_se.png', link: 'creality ender-3 v3 se.html'},
+      {id: 5, name: 'Creality K2 Plus Combo', price: 180000, imgSrc: 'images/creality_k2_plus_combo.png', link: 'creality k2 plus combo.html'},
+      {id: 6, name: 'QIDI Tech X-Max 3', price: 88000, imgSrc: 'images/qidi_tech_x_max_3.png', link: 'qidi tech x-max 3.html'},
+     {id: 7, name: 'Creality K1A', price: 40000, imgSrc: 'images/creality_k1a.png', link: 'creality k1a.html'},
+      {id: 8, name: 'QIDI Tech X-Plus', price: 75000, imgSrc: 'images/qidi_tech_x_plus.png', link: 'qidi tech x-plus.html'}, 
+      {id: 9, name: 'Elegoo Saturn 3 12k', price: 39000, imgSrc: 'images/elegoo_saturn_3_12k.png', link: 'elegoo saturn 3 12k.html'} 
+    ];
 
-    // Функция для отображения корзины
-    function renderCart() {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const cartList = document.getElementById("cart-list");
-      cartList.innerHTML = "";
+    // Функция для отображения каталога товаров
+    function renderCatalog() {
+      const catalogContainer = document.getElementById('catalog');
+      catalogContainer.innerHTML = '';  // Очистить каталог
 
-      let total = 0;
-
-      cart.forEach(product => {
-        const cartItem = document.createElement("li");
-        cartItem.textContent = `${product.name} - ${product.price} руб`;
-        cartList.appendChild(cartItem);
-        total += product.price;
+      products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+          <a href="${product.link}">
+            <img src="${product.imgSrc}" alt="${product.name}">
+          </a>
+          <p class="product-name">${product.name}</p>
+          <p class="product-price">${product.price} руб</p>
+          <button onclick="addToCart(${product.id})">Купить</button>
+        `;
+        catalogContainer.appendChild(productDiv);
       });
-
-      const totalElement = document.getElementById("total");
-      totalElement.textContent = `Общая стоимость: ${total} руб`;
     }
 
-    // Инициализация корзины
-    renderCart();
-  </script>
+    // Функция для добавления товара в корзину
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${product.name} добавлен в корзину`);
+      }
+    }
 
+    // Инициализация отображения каталога
+    renderCatalog();
+  </script>
 </body>
 </html>
