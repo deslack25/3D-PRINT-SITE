@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.5"> <!-- Увеличен масштаб -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Убрали масштабирование -->
   <title>3D Принтеры</title>
   <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">
   <style>
@@ -17,7 +17,7 @@
     /* Панель навигации */
     .navbar {
       background-color: #2c3e50;
-      padding: 15px 0; /* Увеличен padding */
+      padding: 15px 0; 
       color: white;
       text-align: center;
     }
@@ -25,8 +25,8 @@
     .navbar a {
       color: white;
       text-decoration: none;
-      margin: 0 22px; /* Увеличено расстояние */
-      font-size: 24px; /* Увеличен размер шрифта */
+      margin: 0 22px;
+      font-size: 24px;
       font-weight: bold;
     }
 
@@ -40,8 +40,8 @@
     }
 
     .navbar .icons i {
-      margin-left: 30px; /* Увеличено расстояние */
-      font-size: 30px; /* Увеличен размер иконок */
+      margin-left: 30px;
+      font-size: 30px;
       color: white;
     }
 
@@ -53,7 +53,7 @@
     .slider {
       position: relative;
       width: 100%;
-      height: 225px; /* Увеличена высота */
+      height: 225px;
     }
 
     .slider img {
@@ -74,30 +74,30 @@
     }
 
     .slider .prev {
-      left: 15px; /* Увеличено расстояние */
+      left: 15px;
     }
 
     .slider .next {
-      right: 15px; /* Увеличено расстояние */
+      right: 15px;
     }
 
     /* Блок товаров */
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 35px; /* Увеличено расстояние между элементами */
+      gap: 35px;
       justify-items: center;
-      margin: 60px 0; /* Увеличен отступ сверху и снизу */
-      padding: 0 30px; /* Увеличен padding */
+      margin: 60px 0;
+      padding: 0 30px;
     }
 
     .product-item {
       background-color: #fff;
-      padding: 25px; /* Увеличено padding */
+      padding: 25px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       text-align: center;
       width: 100%;
-      max-width: 450px; /* Увеличена максимальная ширина */
+      max-width: 450px;
       box-sizing: border-box;
     }
 
@@ -107,29 +107,29 @@
     }
 
     .product-name {
-      font-size: 24px; /* Увеличен размер шрифта */
-      margin: 15px 0; /* Увеличены отступы */
+      font-size: 24px;
+      margin: 15px 0;
     }
 
     .product-price {
-      font-size: 20px; /* Увеличен размер шрифта */
+      font-size: 20px;
       color: #2c3e50;
     }
 
     /* Кнопка для просмотра */
     .see-all {
       text-align: center;
-      margin: 30px 0; /* Увеличен отступ */
+      margin: 30px 0;
     }
 
     .btn-see-all {
       background-color: #3498db;
       color: white;
-      padding: 15px 30px; /* Увеличено padding */
+      padding: 15px 30px;
       border: none;
-      border-radius: 8px; /* Увеличен радиус */
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 20px; /* Увеличен размер шрифта */
+      font-size: 20px;
     }
 
     .btn-see-all:hover {
@@ -139,17 +139,17 @@
     /* Информация о принтерах */
     .about-printers {
       text-align: center;
-      margin: 30px 0; /* Увеличен отступ */
+      margin: 30px 0;
     }
 
     .text-53 {
-      font-size: 27px; /* Увеличен размер шрифта */
+      font-size: 27px;
       color: #34495e;
-      margin-bottom: 30px; /* Увеличен отступ */
+      margin-bottom: 30px;
     }
 
     .text-56 {
-      font-size: 36px; /* Увеличен размер шрифта */
+      font-size: 36px;
       font-weight: bold;
       color: #2c3e50;
     }
@@ -158,13 +158,13 @@
     .models {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 35px; /* Увеличено расстояние */
+      gap: 35px;
       justify-items: center;
-      margin: 60px 0; /* Увеличен отступ */
+      margin: 60px 0;
     }
 
     .model-item img {
-      width: 225px; /* Увеличены размеры изображений */
+      width: 225px;
       height: 225px;
       object-fit: cover;
     }
@@ -173,35 +173,35 @@
     .footer {
       background-color: #2c3e50;
       color: white;
-      padding: 45px 30px; /* Увеличен padding */
+      padding: 45px 30px;
       text-align: center;
     }
 
     .footer-logo p {
-      font-size: 45px; /* Увеличен размер шрифта */
+      font-size: 45px;
       font-weight: bold;
     }
 
     .footer-links p {
-      margin: 15px 0; /* Увеличены отступы */
-      font-size: 24px; /* Увеличен размер шрифта */
+      margin: 15px 0;
+      font-size: 24px;
     }
 
     .subscribe input {
-      padding: 15px; /* Увеличен padding */
-      margin-right: 15px; /* Увеличен отступ */
+      padding: 15px;
+      margin-right: 15px;
       border: none;
-      border-radius: 8px; /* Увеличен радиус */
-      font-size: 20px; /* Увеличен размер шрифта */
+      border-radius: 8px;
+      font-size: 20px;
     }
 
     .subscribe button {
-      padding: 15px 30px; /* Увеличен padding */
+      padding: 15px 30px;
       background-color: #3498db;
       color: white;
       border: none;
-      border-radius: 8px; /* Увеличен радиус */
-      font-size: 20px; /* Увеличен размер шрифта */
+      border-radius: 8px;
+      font-size: 20px;
       cursor: pointer;
     }
 
@@ -209,7 +209,7 @@
       background-color: #2980b9;
     }
 
- /* Адаптивность для мобильных устройств */
+    /* Адаптивность для мобильных устройств */
     @media (max-width: 768px) {
       .navbar {
         display: flex;
@@ -222,7 +222,7 @@
       }
 
       .products {
-        grid-template-columns: 1fr; /* Один товар в ряду */
+        grid-template-columns: 1fr;
         gap: 20px;
       }
 
@@ -252,28 +252,18 @@
         font-size: 14px;
       }
     }
-/* Стили для ссылок в футере */
-.footer-links a {
-  text-decoration: none;  /* Убираем подчеркивание */
-  color: #fff;  /* Белый цвет текста */
-  font-size: 18px;  /* Устанавливаем размер шрифта */
-  display: block;  /* Каждая ссылка на новой строке */
-  margin-bottom: 10px;  /* Отступ между ссылками */
-}
 
-    /* Дополнительные стили для мобильных устройств */
-    @media (max-width: 480px) {
-      .text-56 {
-        font-size: 20px;
-      }
+    /* Стили для ссылок в футере */
+    .footer-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
 
-      .product-name {
-        font-size: 16px;
-      }
-
-      .product-price {
-        font-size: 14px;
-      }
+    .footer-links a:hover {
+      color: #b0c4de;
     }
   </style>
 </head>
@@ -359,7 +349,6 @@
       <a href="company.html">О компании</a>
       <a href="support.html">Связаться с нами</a>
       <a href="order.html">Способы оплаты</a>
-      
     </div>
   </div>
 </body>
